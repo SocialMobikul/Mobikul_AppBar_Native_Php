@@ -1,0 +1,21 @@
+{
+  "namespace": "MobikulAppBar",
+  "android": {
+    "min_version": 29
+  },
+  "ios": {
+    "min_version": "16.0"
+  },
+  "bridge_functions": [
+    {
+      "name": "MobikulAppBar.Configure",
+      "ios": "MobikulAppBarFunctions.Configure",
+      "android": "com.mobikul.plugins.appbar.MobikulAppBarFunctions.Configure"
+    },
+    {
+      "name": "MobikulAppBar.Reset",
+      "ios": "MobikulAppBarFunctions.Reset",
+      "android": "com.mobikul.plugins.appbar.MobikulAppBarFunctions.Reset"
+    }
+  ]
+}

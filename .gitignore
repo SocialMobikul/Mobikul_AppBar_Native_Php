@@ -1,0 +1,37 @@
+/vendor/
+/node_modules/
+
+# Dependency / tool state
+composer.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+*.tmp
+*.cache
+
+# Test and coverage artifacts
+.phpunit.result.cache
+coverage/
+.coverage/
+
+# Build artifacts
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.idea/
+.vscode/
+*.swp
+*.swo

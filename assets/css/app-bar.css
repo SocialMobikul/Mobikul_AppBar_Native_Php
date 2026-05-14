@@ -1,0 +1,115 @@
+.mobikul-app-bar {
+  --mobikul-app-bar-bg: #ffffff;
+  --mobikul-app-bar-title: #111827;
+  --mobikul-app-bar-title-size: 18px;
+  --mobikul-app-bar-title-weight: 600;
+  --mobikul-app-bar-height: 64px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: calc(var(--mobikul-app-bar-height) + env(safe-area-inset-top, 0px));
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 12px;
+  background: var(--mobikul-app-bar-bg);
+  color: var(--mobikul-app-bar-title);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.mobikul-app-bar-elevated {
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.24);
+}
+
+.mobikul-app-bar-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mobikul-app-bar-brand,
+.mobikul-app-bar-btn {
+  border: 0;
+  cursor: pointer;
+}
+
+.mobikul-app-bar-brand {
+  width: var(--mobikul-logo-width, 32px);
+  height: var(--mobikul-logo-height, 32px);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 24, 39, 0.08);
+  color: var(--mobikul-app-bar-title);
+  padding: 0;
+  overflow: hidden;
+}
+
+.mobikul-app-bar-brand-clickable:hover,
+.mobikul-app-bar-btn:hover {
+  background: rgba(17, 24, 39, 0.16);
+}
+
+.mobikul-app-bar-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobikul-app-bar-logo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.mobikul-app-bar-title-group {
+  min-width: 0;
+}
+
+.mobikul-app-bar-title {
+  color: var(--mobikul-app-bar-title);
+  font-size: var(--mobikul-app-bar-title-size);
+  font-weight: var(--mobikul-app-bar-title-weight);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobikul-app-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.mobikul-app-bar-btn {
+  background: rgba(17, 24, 39, 0.08);
+  color: var(--mobikul-app-bar-title);
+  border-radius: 999px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.mobikul-app-bar-icon-btn:active {
+  transform: scale(0.96);
+}
+
+.mobikul-app-bar-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}

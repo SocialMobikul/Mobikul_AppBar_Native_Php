@@ -1,0 +1,40 @@
+{
+  "name": "mobikul/mobikul_appbar",
+  "description": "Dynamic app bar bridge for NativePHP Mobile with title and context-aware icon actions",
+  "homepage": "https://mobikul.com/",
+  "type": "nativephp-plugin",
+  "license": "MIT",
+  "keywords": [
+    "nativephp",
+    "nativephp-plugin",
+    "mobile",
+    "app-bar",
+    "toolbar"
+  ],
+  "support": {
+    "issues": "https://github.com/SocialMobikul/Mobikul_AppBar_Native_Php/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "MobikulAppBar\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+    "nativephp/mobile": "^3.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MobikulAppBar\\MobikulAppBarServiceProvider"
+      ],
+      "aliases": {
+        "MobikulAppBar": "MobikulAppBar\\Facades\\MobikulAppBar"
+      }
+    },
+    "nativephp": {
+      "manifest": "nativephp.json"
+    }
+  }
+}
