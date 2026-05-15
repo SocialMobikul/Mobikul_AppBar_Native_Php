@@ -6,7 +6,7 @@ To find out more, visit: https://mobikul.com/
 
 ## Overview
 
-`nativephp/mobikul_appbar` provides a consistent API to configure your mobile app bar from your Laravel/NativePHP layer.
+`mobikul/nativephp-mobile-appbar` provides a consistent API to configure your mobile app bar from your Laravel/NativePHP layer.
 
 It exposes two bridge methods:
 
@@ -34,13 +34,13 @@ It exposes two bridge methods:
 Install the package:
 
 ```bash
-composer require mobikul/mobikul_appbar
+composer require mobikul/nativephp-mobile-appbar
 ```
 
 Register the NativePHP plugin:
 
 ```bash
-php artisan native:plugin:register mobikul/mobikul_appbar
+php artisan native:plugin:register mobikul/nativephp-mobile-appbar
 ```
 
 Verify registration:
@@ -49,7 +49,7 @@ Verify registration:
 php artisan native:plugin:list
 ```
 
-Ensure `mobikul/mobikul_appbar` appears in the plugin list.
+Ensure `mobikul/nativephp-mobile-appbar` appears in the plugin list.
 
 `MobikulAppBarServiceProvider` is Laravel auto-discovered through Composer metadata. Usually you do not need to add it manually.
 If your app disables package discovery, add it explicitly:
@@ -270,13 +270,13 @@ Initialize bindings after rendering the app bar:
 Unregister plugin from NativePHP:
 
 ```bash
-php artisan native:plugin:register mobikul/mobikul_appbar --remove
+php artisan native:plugin:register mobikul/nativephp-mobile-appbar --remove
 ```
 
 Remove Composer package:
 
 ```bash
-composer remove mobikul/mobikul_appbar
+composer remove mobikul/nativephp-mobile-appbar
 ```
 
 Rebuild native projects:

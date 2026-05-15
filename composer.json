@@ -1,5 +1,5 @@
 {
-  "name": "nativephp/mobikul_appbar",
+  "name": "mobikul/nativephp-mobile-appbar",
   "description": "Dynamic app bar bridge for NativePHP Mobile with title and context-aware icon actions",
   "homepage": "https://mobikul.com/",
   "type": "nativephp-plugin",
