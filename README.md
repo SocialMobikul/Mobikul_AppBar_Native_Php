@@ -229,13 +229,15 @@ fetch('/_native/api/call', {
 </script>
 ```
 
-### 4. Reset app bar to plugin defaults
+### 4. Reset app bar to native defaults
 
 ```php
 use MobikulAppBar\Facades\MobikulAppBar;
 
 $payload = MobikulAppBar::reset();
 ```
+
+`reset()` returns the `MobikulAppBar.Reset` bridge payload. On device, native layers apply built-in defaults (`title: "App"`, `context: "default"`, default icons, and default options), not your Laravel config overrides.
 
 ## Frontend Assets Usage
 
@@ -250,7 +252,18 @@ Include the script in Blade/layout if you use the HTML app bar helpers:
 <script src="/vendor/mobikul_appbar/js/app-bar.js"></script>
 ```
 
-`app-bar.js` binds click actions from elements having `data-action` and emits `mobikul:app-bar-action`.
+Initialize bindings after rendering the app bar:
+
+```html
+<script>
+  window.MobikulNativeAppBar.bind(document);
+</script>
+```
+
+`app-bar.js` binds click actions from elements having `data-action` and emits `mobikul:app-bar-action` with:
+
+- `detail.action`: action key from `data-action`
+- `detail.icon`: icon name from `aria-label`
 
 ## Uninstall / Remove
 
@@ -356,6 +369,14 @@ Builds a typed configuration payload using `AppBarCustomValues` + `AppBarIcon` o
 
 Returns a bridge payload for `MobikulAppBar.Reset`.
 
+### `MobikulAppBar::renderHtml(string $title, array $icons = [], array $options = [], string $id = 'mobikul-native-app-bar'): string`
+
+Returns plugin-managed app bar HTML markup using array icons + options.
+
+### `MobikulAppBar::renderHtmlWithCustomValues(string $title, AppBarCustomValues $customValues, array $icons = [], string $id = 'mobikul-native-app-bar'): string`
+
+Returns plugin-managed app bar HTML markup using `AppBarCustomValues` + `AppBarIcon` objects.
+
 ## AppBarCustomValues API
 
 `AppBarCustomValues` provides a fluent, typed way to build the `options` payload.
@@ -384,6 +405,10 @@ Use typed icons with validation:
 - `new AppBarIcon(string $icon, string $action)`
 - `toArray(): array`
 
+`AppBarIcon` enforces icon validity and non-empty action in PHP and throws `InvalidArgumentException` for invalid values.
+
+When you use array icons with `configure()`, validation/filtering happens in native (Android/iOS), and context defaults are applied if no valid icons remain.
+
 Allowed icon values:
 
 - `back`
@@ -406,5 +431,5 @@ Allowed icon values:
 
 ## Plugin Preview
 
-<img src="./docs/plugin-preview-home.png" alt="Mobikul App Bar home preview" width="260" />
-<img src="./docs/plugin-preview-search.png" alt="Mobikul App Bar search preview" width="260" />
+<img src="https://raw.githubusercontent.com/SocialMobikul/Mobikul_AppBar_Native_Php/refs/heads/main/docs/plugin-preview-home.png" alt="Mobikul App Bar home preview" width="260" />
+<img src="https://raw.githubusercontent.com/SocialMobikul/Mobikul_AppBar_Native_Php/refs/heads/main/docs/plugin-preview-search.png" alt="Mobikul App Bar search preview" width="260" />
