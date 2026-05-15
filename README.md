@@ -6,7 +6,7 @@ To find out more, visit: https://mobikul.com/
 
 ## Overview
 
-`mobikul/mobikul_appbar` provides a consistent API to configure your mobile app bar from your Laravel/NativePHP layer.
+`nativephp/mobikul_appbar` provides a consistent API to configure your mobile app bar from your Laravel/NativePHP layer.
 
 It exposes two bridge methods:
 
